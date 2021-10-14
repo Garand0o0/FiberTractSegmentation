@@ -2,8 +2,8 @@ function info = global_local()
     p1 = 'data/global';
     fileFolder1=fullfile(p1);
     dirOutput1=dir(fullfile(fileFolder1));
-    fileNames1={dirOutput1.name};  %105个文件夹
-    for c=1:2  %删除隐藏文件
+    fileNames1={dirOutput1.name};  
+    for c=1:2  
         fileNames1(1)=[];
     end
 
@@ -34,5 +34,5 @@ function info = global_local()
         end
         dlmwrite(p3, data_train, 'delimiter',' ');   
     end
-    info = 'processing data 100%';
+    info = 'Calculating FiberGeoMap done. FiberTractSegmentation......';
 end

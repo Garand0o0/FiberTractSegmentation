@@ -1,7 +1,6 @@
 function info = takeVtk(fname)
-    % tractseg�����������ֵ�?0.2�ó���Ԥ���ǩ����ȫ����ά����ȡ��ǩ��?72�ģ���73�ࣩ�����vtk
     whole=fname;
-    [vtx_whole,fiberNum_whole,fiber_whole] = fiberReading(whole);  % ��ȡȫ��vtk
+    [vtx_whole,fiberNum_whole,fiber_whole] = fiberReading(whole);  
 
     f = 'predict_label/yuce_label.txt';
     fid = fopen(f);
@@ -48,12 +47,11 @@ function info = takeVtk(fname)
             vtx_73=[];
             fiberNum_73=0;
         else
-            fiber_73=fiber_whole(predict{th}); %��ȡ�ظ�fiber
+            fiber_73=fiber_whole(predict{th}); 
             fiber_73_mat = cell2mat(fiber_73);
-            vtx_73 = vtx_whole(:,fiber_73_mat); %��ȡ�ظ�vtx
+            vtx_73 = vtx_whole(:,fiber_73_mat); 
             fiberNum_73=length(fiber_73);
 
-            %���ظ������ߵ���Ϣ�͵���Ϣƥ��
             cha = fiber_73{1}(1);
             for w = 1:size(fiber_73{1},2)
                 fiber_73{1}(w) = fiber_73{1}(w) - cha + 1;
@@ -65,12 +63,11 @@ function info = takeVtk(fname)
                 end
             end 
         end
-        %�洢�ظ����ֵ�vtk
         savedName=['data/result/',char(index_ls(th)),'.vtk'];
         if  exist(['data/result//'])==0 
             mkdir(['data/result//']);
         end
         fiberWritting(savedName,vtx_73,fiberNum_73,fiber_73);
     end
-    info = 'over';
+    info = 'Done';
 end

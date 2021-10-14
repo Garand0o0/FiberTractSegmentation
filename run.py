@@ -253,4 +253,6 @@ if __name__ == '__main__':
             yuce_label_temp = test(config, model, x_test)
             yuce_label = np.vstack((yuce_label, yuce_label_temp))
     np.savetxt('predict_label/yuce_label.txt', yuce_label, fmt="%d")
+    print('Done.Writing......')
     print(engine.takeVtk(fame))
+    print('Done.')

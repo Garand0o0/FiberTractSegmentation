@@ -7,14 +7,14 @@ function info = c_m_c40(fname)
     vtx(2,:)= vtx(2,:)-Centerpoint(1,2);
     vtx(3,:)= vtx(3,:)-Centerpoint(1,3);
 
-    r = (vtx(1,:).^2 + vtx(2,:).^2 + vtx(3,:).^2).^(1/2); %ÿ���������ĵ�ľ���?
-    zangle = acosd(vtx(3,:)./r)+eps;    %�춥�� arccos  ����ԭ�����ߺ� z ��ļн�?
-    Azimuth  = atan2d(vtx(2,:),vtx(1,:))+eps;  %��λ��  ���ԭ��������? xy ����ɵ�ƽ���ϵ�ͶӰ��? x ��ļн�? 
-    r = mapminmax(r,0,1)+eps;  %��һ��r
+    r = (vtx(1,:).^2 + vtx(2,:).^2 + vtx(3,:).^2).^(1/2); 
+    zangle = acosd(vtx(3,:)./r)+eps;    
+    Azimuth  = atan2d(vtx(2,:),vtx(1,:))+eps;  
+    r = mapminmax(r,0,1)+eps;  
 
-    x1=0:1/36:1;  %���ڽ��뾶�ȷֳ�36��
-    x2=0:5:180;  %���ڽ�����36�ȷ�
-    x3=-180:10:180; %����λ�ǵȷ�36��
+    x1=0:1/36:1;  
+    x2=0:5:180;  
+    x3=-180:10:180; 
 
     batch = 1:100000:fiberNum;
     batch(1) = batch(1) - 1;
@@ -54,23 +54,23 @@ function info = c_m_c40(fname)
     end
 
     [vtx,fiberNum,fiber] = fiberReading(fname);
-    x1=0:1/36:1;  %���ڽ��뾶�ȷֳ�36��
-    x2=0:5:180;  %���ڽ�����36�ȷ�
-    x3=-180:10:180; %����λ�ǵȷ�36��
+    x1=0:1/36:1;  
+    x2=0:5:180;  
+    x3=-180:10:180; 
 
     for pici=1:length(batch)-1
         j = 1;
         for i=batch(pici)+1:batch(pici+1)
             vtx1 = vtx(:,fiber{i}(1):fiber{i}(size(fiber{i},2)));
-            Centerpoint = mean(vtx1'); %���ĵ�
+            Centerpoint = mean(vtx1'); 
 
             vtx1(1,:)= vtx1(1,:)-Centerpoint(1,1);
             vtx1(2,:)= vtx1(2,:)-Centerpoint(1,2);
             vtx1(3,:)= vtx1(3,:)-Centerpoint(1,3);
 
-            r = (vtx1(1,:).^2 + vtx1(2,:).^2 + vtx1(3,:).^2).^(1/2); %ÿ���������ĵ�ľ���?
-            zangle = acosd(vtx1(3,:)./r)+eps;    %�춥�� arccos  ����ԭ�����ߺ� z ��ļн�?
-            Azimuth  = atan2d(vtx1(2,:),vtx1(1,:))+eps;  %��λ��  ���ԭ��������? xy ����ɵ�ƽ���ϵ�ͶӰ��? x ��ļн�? 
+            r = (vtx1(1,:).^2 + vtx1(2,:).^2 + vtx1(3,:).^2).^(1/2); 
+            zangle = acosd(vtx1(3,:)./r)+eps;    
+            Azimuth  = atan2d(vtx1(2,:),vtx1(1,:))+eps;  
             r = mapminmax(r,0,1)+eps;  %��һ��r
 
             qvtx(1,:)=r;
@@ -100,5 +100,5 @@ function info = c_m_c40(fname)
         dlmwrite(p3, coordinate, 'delimiter',' ');      
         coordinate=[];
     end
-    info = 'processing data 50%';
+    info = 'Calculating FiberGeoMap......';
 end
