@@ -1,5 +1,6 @@
 # FiberTractSegmentation
 ACCURATE CORRESPONDING FIBER TRACT SEGMENTATION VIA FIBERGEOMAP LEARNER
+
 Run “run.py” for fiber segmentation:
 
     python run.py --datapath=yourpath
