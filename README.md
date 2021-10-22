@@ -1,7 +1,17 @@
 # FiberTractSegmentation
 ACCURATE CORRESPONDING FIBER TRACT SEGMENTATION VIA FIBERGEOMAP LEARNER
 
-Run “run.py” for fiber segmentation:
+Dependencies & Installation
+
+    python3.5
+    matlab_R2019a
+
+First, you have to make sure that matlab supports python calls:
+
+    source activate your_python_environment
+    cd R2017a/extern/engines/python
+    python setup.py install
+Then, run “run.py” for fiber segmentation:
 
     python run.py --datapath=yourpath
 The default path is data/demo.vtk. 
