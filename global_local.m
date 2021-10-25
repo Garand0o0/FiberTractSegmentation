@@ -34,5 +34,5 @@ function info = global_local()
         end
         dlmwrite(p3, data_train, 'delimiter',' ');   
     end
-    info = 'Calculating FiberGeoMap done. FiberTractSegmentation......';
+    info = 'FiberTractSegmentation......';
 end
