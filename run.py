@@ -213,6 +213,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     engine = matlab.engine.start_matlab()
     fame = args.datapath
+    print('Calculating FiberGeoMap......')
     print(engine.c_m_c40(fame))
     print(engine.global_local())
     path0 = 'data/global_local/'
@@ -255,4 +256,3 @@ if __name__ == '__main__':
     np.savetxt('predict_label/yuce_label.txt', yuce_label, fmt="%d")
     print('Done.Writing......')
     print(engine.takeVtk(fame))
-    print('Done.')
