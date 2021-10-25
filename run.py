@@ -223,6 +223,7 @@ if __name__ == '__main__':
             path_list0[i] = ''
     while '' in path_list0:
         path_list0.remove('')
+    path_list0.sort(key=lambda x: int(x[7:-4]))
     dataset1 = 'data/global_local/' + path_list0[0]
     config = Config()
     np.random.seed(1)
