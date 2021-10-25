@@ -100,5 +100,5 @@ function info = c_m_c40(fname)
         dlmwrite(p3, coordinate, 'delimiter',' ');      
         coordinate=[];
     end
-    info = 'Calculating FiberGeoMap......';
+    info = 'Calculate FiberGeoMap DONE';
 end
