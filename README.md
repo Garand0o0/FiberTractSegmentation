@@ -18,7 +18,7 @@ The default path is data/demo.vtk.
 Your data must be in Ascii vtk format.
 You can find the segmentation results in the 'data/result'.
 
-Video display of 104 segmentation results：
+Video display of segmentation result：
 
 
 ![2 00_00_00-00_00_30.gif](https://i.loli.net/2021/10/25/as3g5uLoHl84tTi.gif)
