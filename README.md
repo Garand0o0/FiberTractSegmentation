@@ -16,13 +16,9 @@ Then, run “run.py” for fiber segmentation:
     python run.py --datapath=yourpath
 The default path is data/demo.vtk. 
 Your data must be in Ascii vtk format.
-You can find the segmentation results in the 'data/result', including 104 vtk (103 tracts and one others.vtk)
+You can find the segmentation results in the 'data/result'.
 
 Video display of 104 segmentation results：
 
-![3 00_00_00-00_00_30.gif](https://i.loli.net/2021/10/15/r6MzbBs7ito8UlC.gif)
-
-Before we improved the algorithm, there were only 73 vtk(72 tracts and one others.vtk) in the 'data/result'.
-Video display of 73 segmentation results：
 
 ![2 00_00_00-00_00_30.gif](https://i.loli.net/2021/10/25/as3g5uLoHl84tTi.gif)
