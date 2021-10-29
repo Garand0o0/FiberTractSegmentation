@@ -22,3 +22,6 @@ Video display of segmentation result：
 
 
 ![2 00_00_00-00_00_30.gif](https://i.loli.net/2021/10/25/as3g5uLoHl84tTi.gif)
+
+
+![image](https://github.com/Garand0o0/FiberTractSegmentation/data/images/2.gif)
